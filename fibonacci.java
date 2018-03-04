@@ -1,18 +1,17 @@
 public class fibonacci {
-    public long power(int a, int b) {
-        // Write your solution here
-        if (b==0) return 1;
-        if (b==1) return a;
-        long r=1;
-        if (b%2 == 0) return power (a*a, b/2);
-        else return   a*power(a*a, b/2);
-
-    }
-
-    public static void main (String[] args){
-        fibonacci a = new fibonacci();
-        System.out.println(a.power(1,2147483647));
-    }
+    public long fibonacci(int K){ 
+    		if (K<=0) return 0;
+        if (K==1) return 1;
+        long[] fib = new long[K+1];
+        fib[0]=0;
+        fib[1]=1; 
+        
+        for (int i=2; i<=K;i++){
+            fib[i]=fib[i-1] +fib[i-2];
+        } 
+        
+        return fib[K]; 
+    } 
 
 
 
